@@ -6,7 +6,7 @@ CREATE TABLE student
     student_id INT NOT NULL,
     first_name NVARCHAR(20),
     second_name NVARCHAR(20),
-    group_number VARCHAR(10)
+    group_number VARCHAR(10),
     PRIMARY KEY(student_id)
 )
 
@@ -15,7 +15,7 @@ CREATE TABLE subject
     subject_id INT NOT NULL,
     subject_name NVARCHAR(50),
     CONSTRAINT  professor_id  FOREIGN KEY ( professor_id)
-    REFERENCES  professor ( professor_id)
+    REFERENCES  professor ( professor_id),
     PRIMARY KEY(subject_id)
 )
 
