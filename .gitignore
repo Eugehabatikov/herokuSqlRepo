@@ -1,4 +1,5 @@
 src/main/resources/db.properties
+Config
 out
 target/
 .idea/
