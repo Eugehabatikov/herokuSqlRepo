@@ -1,0 +1,36 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <default-config>
+
+        <property name="initialPoolSize">3</property>
+        <property name="numHelperThreads">3</property>
+
+        <property name="maxStatements">0</property>
+        <property name="testConnectionOnCheckin">false</property>
+        <property name="testConnectionOnCheckout">false</property>
+        <property name="maxIdleTime">90</property>
+        <property name="maxIdleTimeExcessConnections">0</property>
+        <property name="idleConnectionTestPeriod">30</property>
+
+        <property name="debugUnreturnedConnectionStackTraces">true</property>
+        <property name="unreturnedConnectionTimeout">900</property>
+
+        <property name="autoCommitOnClose">false</property>
+        <property name="preferredTestQuery">select 1</property>
+
+        <property name="acquireIncrement">1</property>
+        <property name="acquireRetryAttempts">30</property>
+        <property name="acquireRetryDelay">1000</property>
+
+        <property name="driverClass">org.postgresql.Driver</property>
+        <property name="jdbcUrl">jdbc:postgresql://192.168.214.152:5432/javacrm?useUnicode=true&amp;characterEncoding=UTF-8</property>
+        <property name="user">javacrm</property>
+        <property name="password">petshop</property>
+        <property name="minPoolSize">1</property>
+        <property name="maxPoolSize">100</property>
+
+        <property name="maxStatements">50</property>
+        <property name="connectionCustomizerClassName">ru.petshop.crm.util.TimeTraceConnectionCustomizer</property>
+    </default-config>
+
+</c3p0-config>
