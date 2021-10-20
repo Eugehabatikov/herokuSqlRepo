@@ -11,8 +11,8 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+//    @Autowired
+//    private UserMapper userMapper;
 
     @Override
     public User findUserById(int id) throws Exception{
@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findUserByName (String userName) throws Exception {
-        return userMapper.findUserByName(userName);
+//        return userMapper.findUserByName(userName);
+        return null;
     }
 }
