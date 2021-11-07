@@ -15,7 +15,7 @@ public class HomeController {
     public String index(ModelMap model){
         model.addAttribute("message", "Spring MVC XML Config Example");
         Date time = new Date();
-        model.addAttribute("message2", time.toString());
+        model.addAttribute("message", time.toString())
         //return "index";
         return "home";
 
