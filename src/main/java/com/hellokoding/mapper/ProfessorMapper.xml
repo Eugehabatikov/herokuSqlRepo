@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hellokoding.mapper.ProfessorMapper">
+
+    <resultMap type="professor" id="result">
+        <id property="id" column="professor_id" />
+        <result property="power_id" column="power_id" />
+        <result property="first_name" column="first_name" />
+        <result property="second_name" column="second_name" />
+    </resultMap>
+
+    <select id="getAllEmployees" resultType="professor" resultMap="result">
+		SELECT * FROM professor
+	</select>
+
+    <insert id="insertProfessor" parameterType="professor" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO professor(power_id, first_name, second_name)
+		VALUES(#{power_id}, #{first_name}, #{second_name})
+	</insert>
+
+    <update id="updateEmployee" parameterType="professor">
+		UPDATE professor SET power_id = #{power_id}, first_name = #{first_name}, second_name = #{second_name}
+		WHERE id = #{id}
+	</update>
+
+    <delete id="deleteEmployee" parameterType="int">
+		DELETE FROM professor WHERE professor_id = #{professor_id}
+	</delete>
+
+    <select id="findById" parameterType="int" resultType="employee" resultMap="result">
+		SELECT * FROM professor WHERE professor_id = #{professor_id}
+	</select>
+</mapper>
