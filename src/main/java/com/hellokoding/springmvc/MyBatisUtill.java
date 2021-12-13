@@ -4,9 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+//import org.apache.ibatis.io.Resources;
+//import org.apache.ibatis.session.SqlSessionFactory;
+//import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
 public class MyBatisUtil {
     private static SqlSessionFactory sqlSessionFactory;
     static {

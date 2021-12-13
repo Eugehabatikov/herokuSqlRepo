@@ -2,51 +2,53 @@ package com.hellokoding.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
+import com.hellokoding.springmvc.MyBatisUtil;
+import com.hellokoding.springmvc.Professor;
+//import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import in.bushansirgur.entity.Employee;
-import in.bushansirgur.util.MyBatisUtil;
+import com.hellokoding.springmvc.Professor;
+import com.hellokoding.springmvc.MyBatisUtil;
 
 
 @Repository
-public class EmployeeMapper {
+public class ProfessorMapper {
 
-    public void saveEmployee(Employee employee){
+    public void saveProfessor(Professor professor){
         SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-        session.insert("insertEmployee", employee);
+        session.insert("insertProfessor", professor);
         session.commit();
         session.close();
     }
 
-    public void updateEmployee(Employee employee){
+    public void updateProfessor (Professor professor){
         SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-        session.update("updateEmployee", employee);
+        session.update("updateProfessor", professor);
         session.commit();
         session.close();
     }
 
-    public void deleteEmployee(int employeeId){
+    public void deleteProfessor(int professorId){
         SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-        session.delete("deleteEmployee", employeeId);
+        session.delete("deleteProfessor", professorId);
         session.commit();
         session.close();
     }
 
-    public List<Employee> getAllEmployees(){
+    public List<Professor> getAllProfessors(){
         SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
         @SuppressWarnings("unchecked")
-        List<Employee> employeesList = session.selectList("getAllEmployees");
+        List<Professor> professorsList = session.selectList("getAllProfessors");
         session.commit();
         session.close();
-        return employeesList;
+        return professorsList;
     }
 
-    public Employee findById(int employeeId){
+    public Professor findById(int professorId){
         SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-        Employee employee = (Employee) session.selectOne("findById", employeeId);
+        Professor professor = (Professor) session.selectOne("findById", professorId);
         session.commit();
         session.close();
-        return employee;
+        return professor;
     }
 }
