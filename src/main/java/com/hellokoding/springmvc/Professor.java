@@ -3,12 +3,10 @@ package com.hellokoding.springmvc;
 public class Professor {
 
     private Integer id;
-    private String fullname;
-    private String email;
-    private String gender;
-    private String hobbies;
-    private String country;
-    private String address;
+    private Integer powerId;
+    private String firstName;
+    private String secondName;
+
 
     public Integer getId() {
         return id;
@@ -16,41 +14,28 @@ public class Professor {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getFullname() {
-        return fullname;
-    }
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    public String getGender() {
-        return gender;
-    }
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-    public String getHobbies() {
-        return hobbies;
-    }
-    public void setHobbies(String hobbies) {
-        this.hobbies = hobbies;
-    }
-    public String getAddress() {
-        return address;
-    }
-    public void setAddress(String address) {
-        this.address = address;
-    }
-    public String getCountry() {
-        return country;
-    }
-    public void setCountry(String country) {
-        this.country = country;
+
+    public Integer getPowerId() {
+        return powerId;
     }
 
+    public void setPowerId(Integer powerId) {
+        this.powerId = powerId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
 }
