@@ -11,7 +11,7 @@
         <result property="second_name" column="second_name" />
     </resultMap>
 
-    <select id="getAllEmployees" resultType="professor" resultMap="result">
+    <select id="getAllProfessor" resultType="professor" resultMap="result">
 		SELECT * FROM professor
 	</select>
 
@@ -20,12 +20,12 @@
 		VALUES(#{power_id}, #{first_name}, #{second_name})
 	</insert>
 
-    <update id="updateEmployee" parameterType="professor">
+    <update id="updateProfessor" parameterType="professor">
 		UPDATE professor SET power_id = #{power_id}, first_name = #{first_name}, second_name = #{second_name}
 		WHERE id = #{id}
 	</update>
 
-    <delete id="deleteEmployee" parameterType="int">
+    <delete id="deleteProfessor" parameterType="int">
 		DELETE FROM professor WHERE professor_id = #{professor_id}
 	</delete>
 

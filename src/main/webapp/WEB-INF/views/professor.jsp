@@ -13,99 +13,28 @@
 <body>
 
 <div class="container">
-    <h1>Employee Details</h1>
+    <h1>Professor Details</h1>
     <hr />
-    <s:form action="saveProcess" modelAttribute="employee">
-        <s:hidden path="id" />
-        <s:hidden path="" value="${employee.hobbies}" id="hobbies" />
-
+    <s:form action="saveProcess" modelAttribute="professor">
         <div class="form-group">
-            <s:input path="fullname" class="form-control"
-                     placeholder="Enter Full Name" />
+            <s:input path="firstName" class="form-control"
+                     placeholder="Enter first name" />
         </div>
 
         <div class="form-group">
-            <s:input path="email" placeholder="Enter Email" class="form-control" />
+            <s:input path="secondName" class="form-control"
+                     placeholder="Enter second name" />
         </div>
 
         <div class="form-group">
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    <s:radiobutton path="gender" value="Male" class="form-check-input"/>Male
-                </label>
-            </div>
-
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    <s:radiobutton path="gender" value="Female" class="form-check-input"/>Female
-                </label>
-            </div>
+            <s:input path="powerId" class="form-control"
+                     placeholder="Enter powerId" />
         </div>
-
-        <div class="form-group">
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    <s:checkbox path="hobbies" value="Sports" class="form-check-input"/>Sports
-                </label>
-            </div>
-
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    <s:checkbox path="hobbies" value="Browsing" class="form-check-input"/>Browsing
-                </label>
-            </div>
-
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    <s:checkbox path="hobbies" value="Running" class="form-check-input"/>Running
-                </label>
-            </div>
-
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    <s:checkbox path="hobbies" value="Chatting" class="form-check-input"/>Chatting
-                </label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <s:select path="country" class="form-control">
-                <s:option value="0">--Select--</s:option>
-                <s:option value="India">India</s:option>
-                <s:option value="Australia">Australia</s:option>
-                <s:option value="Japan">Japan</s:option>
-                <s:option value="America">America</s:option>
-                <s:option value="South Africa">South Africa</s:option>
-                <s:option value="Sri Lanka">Sri Lanka</s:option>
-            </s:select>
-        </div>
-
-        <div class="form-group">
-            <s:textarea path="address" placeholder="Enter Address"
-                        class="form-control" />
-        </div>
-        <input type="submit" value="Save" class="btn btn-info" />&nbsp;
-        <input type="reset" value="Reset" class="btn btn-danger" />
-
     </s:form>
     <hr />
-    <a href="listOfEmployee">Back to List</a>
+    <a href="listOfProfessor">Back to List</a>
 </div>
 <script
         src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        var hobbies = $("#hobbies").val().split(",");
-        var $checkboxes = $("input[type=checkbox]");
-        $checkboxes.each(function(idx, element) {
-            if (hobbies.indexOf(element.value) != -1) {
-                element.setAttribute("checked", "checked");
-                $("#hobbies").val("");
-            } else {
-                element.removeAttribute("checked");
-            }
-        });
-    });
-</script>
 </body>
 </html>
