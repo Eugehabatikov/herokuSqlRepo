@@ -1,0 +1,1 @@
+<% response.sendRedirect("/professorList.jsp"); %>

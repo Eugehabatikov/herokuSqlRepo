@@ -1,22 +1,19 @@
 package com.hellokoding.dao;
 
-import java.util.List;
-
 import com.hellokoding.springmvc.MyBatisUtil;
 import com.hellokoding.springmvc.Professor;
-//import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.hellokoding.springmvc.Professor;
-import com.hellokoding.springmvc.MyBatisUtil;
+import java.util.List;
 
 
 @Repository
 public class ProfessorMapper {
 
     public void saveProfessor(Professor professor){
-        SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-        session.insert("insertProfessor", professor);
+        SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession(); //task 1 = c3p0 lib
+        session.insert("insertProfessor", professor); //task 2 = xml queries mapper to see mybatis
         session.commit();
         session.close();
     }
